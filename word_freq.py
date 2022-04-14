@@ -11,7 +11,11 @@ if __name__ == '__main__':
         word.extend(line[i].split())
 
     for i in range(0, len(word)):
-         word[i] = ''.join(char for char in word[i] if char.isalnum())
-    print(word)
+        word[i] = ''.join(char for char in word[i] if char.isalnum())
+        if (word[i] in D):
+            D[word[i]] = D[word[i]] + 1
+        else:
+            D[word[i]] = 1
     f.close()
-    # line.count(word[1])
+
+    print(D)
