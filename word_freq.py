@@ -7,6 +7,8 @@ if __name__ == '__main__':
     word = []
     D = {}
     line = f.readlines()
+    f.close()
+
     for i in range(0, len(line)):
         word.extend(line[i].split())
 
@@ -16,6 +18,7 @@ if __name__ == '__main__':
             D[word[i]] = D[word[i]] + 1
         else:
             D[word[i]] = 1
-    f.close()
 
-    print(D)
+    sorted_D = sorted(D.items(), key=lambda x: x[1], reverse=True)
+    for i in range(0, int(sys.argv[2])):
+        print(sorted_D[i])
