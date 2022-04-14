@@ -21,4 +21,5 @@ if __name__ == '__main__':
 
     sorted_D = sorted(D.items(), key=lambda x: x[1], reverse=True)
     for i in range(0, int(sys.argv[2])):
-        print(sorted_D[i])
+        print(sorted_D[i][0], sorted_D[i][1])
+
